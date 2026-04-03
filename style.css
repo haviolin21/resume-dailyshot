@@ -1,7 +1,7 @@
 :root {
   /* Dailyshot inspired colors */
-  --primary-color: #FF7B00; /* Signature orange */
-  --primary-hover: #E06D00;
+  --primary-color: #fe5001; /* Exact Dailyshot orange */
+  --primary-hover: #d44301;
   --secondary-color: #212529; /* Dark gray for text */
   --bg-color: #ffffff;
   --bg-light: #f8f9fa;
@@ -139,7 +139,7 @@ ul {
 .badge {
   display: inline-block;
   padding: 6px 14px;
-  background-color: rgba(255, 123, 0, 0.1);
+  background-color: rgba(254, 80, 1, 0.1);
   color: var(--primary-color);
   border-radius: var(--radius-full);
   font-weight: 600;
@@ -213,7 +213,7 @@ ul {
 .competency-card .card-icon {
   width: 48px;
   height: 48px;
-  background-color: rgba(255, 123, 0, 0.1);
+  background-color: rgba(254, 80, 1, 0.1);
   color: var(--primary-color);
   border-radius: 12px;
   display: flex;
@@ -276,7 +276,7 @@ ul {
 .total-exp {
   font-weight: 600;
   color: var(--primary-color);
-  background-color: rgba(255, 123, 0, 0.1);
+  background-color: rgba(254, 80, 1, 0.1);
   padding: 6px 12px;
   border-radius: 8px;
 }
@@ -424,7 +424,7 @@ ul {
 }
 
 .result-block {
-  background-color: rgba(255, 123, 0, 0.05);
+  background-color: rgba(254, 80, 1, 0.05);
   padding: 20px;
   border-radius: var(--radius-md);
   margin-bottom: 0;
