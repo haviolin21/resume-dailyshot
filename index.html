@@ -17,16 +17,24 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">HA YUNTAEK<span>.</span></div>
-            <div class="nav-links">
-                <a href="#about">소개</a>
-                <a href="#competencies">핵심역량</a>
-                <a href="#motivation">지원동기</a>
-                <a href="#experience">경력</a>
-                <a href="#projects">프로젝트</a>
-                <button class="theme-toggle" id="theme-toggle" title="테마 변경">
-                    <span class="material-symbols-rounded">dark_mode</span>
-                </button>
+            <div class="nav-left">
+                <div class="logo">HA YUNTAEK<span>.</span></div>
+                <div class="nav-links">
+                    <a href="#about">소개</a>
+                    <a href="#competencies">핵심역량</a>
+                    <a href="#motivation">지원동기</a>
+                    <a href="#experience">경력</a>
+                    <a href="#projects">프로젝트</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <span class="material-symbols-rounded sun-icon">light_mode</span>
+                        <span class="material-symbols-rounded moon-icon">dark_mode</span>
+                    </div>
+                </label>
             </div>
         </div>
     </nav>
