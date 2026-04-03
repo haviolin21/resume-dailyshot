@@ -6,6 +6,7 @@
   --bg-color: #ffffff;
   --bg-light: #f8f9fa;
   --text-main: #212529;
+  --text-content: #495057; /* Standard body text gray */
   --text-muted: #868e96;
   --border-color: #e9ecef;
   
@@ -25,6 +26,7 @@ body.dark-mode {
   --bg-color: #121212;
   --bg-light: #1e1e1e;
   --text-main: #f8f9fa;
+  --text-content: #e0e0e0; /* Brighter gray for dark mode */
   --text-muted: #a0a0a0;
   --border-color: #2c2c2c;
   --secondary-color: #000000;
@@ -483,7 +485,7 @@ ul {
 .motivation-card p {
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #495057;
+  color: var(--text-content);
   margin-bottom: 24px;
 }
 
@@ -572,7 +574,7 @@ ul {
   position: relative;
   padding-left: 28px;
   margin-bottom: 12px;
-  color: #495057;
+  color: var(--text-content);
 }
 
 .exp-section ul.check-list li::before {
@@ -600,7 +602,7 @@ ul {
 
 .tech-tag {
   background-color: var(--bg-light);
-  color: #495057;
+  color: var(--text-content);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.875rem;
@@ -655,7 +657,7 @@ ul {
 }
 
 .p-block p {
-  color: #495057;
+  color: var(--text-content);
 }
 
 .result-block {
@@ -706,7 +708,7 @@ ul {
 
 .edu-major {
   font-weight: 600;
-  color: #495057;
+  color: var(--text-content);
 }
 
 .edu-date {
@@ -907,7 +909,7 @@ footer {
 }
 
 .modal-body {
-  color: #495057;
+  color: var(--text-content);
   line-height: 1.8;
 }
 
