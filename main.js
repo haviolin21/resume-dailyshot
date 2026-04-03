@@ -86,7 +86,30 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // Modal Interactions
+    // 4. Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.material-symbols-rounded');
+    const body = document.body;
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeIcon.textContent = 'light_mode';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        
+        // Update icon
+        themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        
+        // Save preference
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // 5. Modal Interactions
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const modals = document.querySelectorAll('.modal');
     const closeBtns = document.querySelectorAll('.modal-close');
