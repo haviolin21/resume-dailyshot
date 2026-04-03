@@ -406,11 +406,6 @@ ul {
   object-fit: contain;
 }
 
-.num-highlight {
-  color: var(--primary-color);
-  font-weight: 800;
-}
-
 /* Projects */
 .projects-grid {
   display: grid;
