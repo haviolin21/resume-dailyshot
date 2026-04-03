@@ -176,7 +176,7 @@ ul {
   background-color: var(--bg-light);
   padding: 12px 20px;
   border-radius: var(--radius-full);
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .contact-item:hover {
@@ -186,6 +186,21 @@ ul {
 .contact-item .material-symbols-rounded {
   color: var(--primary-color);
   font-size: 1.25rem;
+}
+
+.download-btn {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.download-btn:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+.download-btn .material-symbols-rounded {
+  color: white;
 }
 
 /* Cards & Grid */
