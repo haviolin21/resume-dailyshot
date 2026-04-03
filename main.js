@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = 'var(--shadow-sm)';
             navbar.style.padding = '10px 0';
+            
         } else {
             navbar.style.boxShadow = 'none';
             navbar.style.padding = '16px 0';
@@ -81,4 +82,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // 4. Modal Interactions
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modals = document.querySelectorAll('.modal');
+    const closeBtns = document.querySelectorAll('.modal-close');
+
+    // Open modal
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const targetId = trigger.getAttribute('data-target');
+            const targetModal = document.getElementById(targetId);
+            if (targetModal) {
+                targetModal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+
+    // Close modal (via close button)
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modals.forEach(modal => modal.classList.remove('show'));
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close modal (via clicking outside)
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
 });
