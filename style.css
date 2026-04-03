@@ -395,6 +395,20 @@ ul {
   font-size: 0.875rem;
   font-weight: 500;
   border: 1px solid var(--border-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tech-tag img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.num-highlight {
+  color: var(--primary-color);
+  font-weight: 800;
 }
 
 /* Projects */

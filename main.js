@@ -39,51 +39,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Intersection Observer for fade-in animations
+    // 3. Staggered Intersection Observer for fade-in animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing once visible
+                // Add a small delay based on order for a "staggered" effect
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); 
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Add animation classes to elements
+    // Group elements to animate
     const elementsToAnimate = [
-        ...document.querySelectorAll('.card'),
+        document.querySelector('.hero-content'),
         ...document.querySelectorAll('.section-title'),
+        ...document.querySelectorAll('.card'),
         ...document.querySelectorAll('.timeline-item'),
-        document.querySelector('.hero-content')
+        ...document.querySelectorAll('.tech-tag')
     ];
 
-    // Initialize initial state for animation
     elementsToAnimate.forEach(el => {
         if(el) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
             observer.observe(el);
         }
     });
 
-    // CSS class for when element becomes visible
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // 4. Modal Interactions
+    // Modal Interactions
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const modals = document.querySelectorAll('.modal');
     const closeBtns = document.querySelectorAll('.modal-close');
@@ -95,12 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetModal = document.getElementById(targetId);
             if (targetModal) {
                 targetModal.classList.add('show');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
             }
         });
     });
 
-    // Close modal (via close button)
+    // Close modal
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             modals.forEach(modal => modal.classList.remove('show'));
@@ -108,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal (via clicking outside)
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
