@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // CSS class for when element becomes visible
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+
     // Modal Interactions
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const modals = document.querySelectorAll('.modal');
