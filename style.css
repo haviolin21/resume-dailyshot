@@ -302,7 +302,11 @@ ul {
   backdrop-filter: blur(8px);
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .navbar {
+  background-color: rgba(18, 18, 18, 0.9);
 }
 
 .nav-container {

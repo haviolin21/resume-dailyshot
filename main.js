@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.checked = true;
     }
 
-    themeToggle.addEventListener('change', () => {
+    const toggleTheme = () => {
         const isDark = themeToggle.checked;
         if (isDark) {
             body.classList.add('dark-mode');
@@ -106,7 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('dark-mode');
             localStorage.setItem('theme', 'light');
         }
-    });
+        
+        // Force a repaint to prevent "lag" on mobile browsers
+        // Accessing offsetHeight triggers a layout reflow
+        void body.offsetHeight;
+    };
+
+    // Use both change and click for maximum responsiveness on different mobile OS
+    themeToggle.addEventListener('change', toggleTheme);
 
     // 5. Modal Interactions
     const modalTriggers = document.querySelectorAll('.modal-trigger');
